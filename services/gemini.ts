@@ -11,7 +11,7 @@ import { extractHtmlFromText } from "../utils/html";
 const ai = new GoogleGenAI({ apiKey: process.env.API_KEY });
 
 export const IMAGE_SYSTEM_PROMPT = "Generate an isolated object/scene on a simple background.";
-export const VOXEL_PROMPT = "I have provided an image. Code a beautiful voxel art scene inspired by this image. Write threejs code as a single-page.";
+export const VOXEL_PROMPT = "I have provided an image. Code a beautiful voxel art scene inspired by this image. Write threejs code as a single-page. Configure OrbitControls with reasonable minDistance (e.g. 10) and maxDistance (e.g. 300) to prevent clipping or getting lost.";
 
 export const generateImage = async (prompt: string, aspectRatio: string = '1:1', optimize: boolean = true): Promise<string> => {
   try {
